@@ -7,4 +7,6 @@ This code is intended for educational purposes to *illustrate* how methods could
 
 ## Efficient data structures for sparse graphs
 
-Illustration how to implement in java an efficient data structure for sparse graphs which is asymptotically optimal in both space (memory) requirement and runtime complexity.
+Illustration how to implement in java an efficient data structure for sparse graphs which is asymptotically optimal in both space (memory) consumption and runtime complexity.
+
+See [```src/kn/uni/nl/ds/graph/```](https://github.com/juergenlerner/netlearn/tree/main/src/kn/uni/nl/ds/graph) for code.
