@@ -115,4 +115,39 @@ public abstract class UndirectedGraph<T> {
 	 */
 	public abstract Iterable<T> neighbors(T v);
 
+	/**
+	 * Returns the number of closed triangles in this graph.
+	 * 
+	 * A closed triangle is an unordered set of three nodes {u,v,w}, such that
+	 * {u,v} is in E, {u,w} is in E, and {w,v} is in E.
+	 * 
+	 * This method is illustrative for an algorithm relying on a graph representation
+	 * that allows efficient iteration over edges and neighbors and at the same time
+	 * efficient adjacency tests.
+	 * 
+	 * The case distinction concerning the degrees of u and v can yield large runtime
+	 * improvement on graphs with skewed degree distributions (few nodes with very high
+	 * degrees and most nodes with very low degrees).
+	 * 
+	 * @return number of closed triangles
+	 */
+	public int getNumTriangles() {
+		int t = 0;
+		for(UndirectedEdge<T> e : edges()) {
+			T u = e.getNode1();
+			T v = e.getNode2();
+			if(degree(u) <= degree(v)) {
+				for(T w : neighbors(u)) {
+					if(adjacent(w, v)) ++t;
+				}
+			} else {
+				for(T w: neighbors(v)) {
+					if(adjacent(u, w)) ++t;
+				}
+			}
+		}
+		// up to here we counted each triangle three times (with each of its edges as a basis)
+		return t/3;
+	}
+	
 }

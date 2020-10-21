@@ -134,4 +134,38 @@ public abstract class DirectedGraph<T> {
 	 */
 	public abstract Iterable<T> outNeighbors(T v);
 	
+	/**
+	 * Returns the number of transitive triples in this graph.
+	 * 
+	 * A transitive triple is an ordered triple of nodes (u,v,w), such that
+	 * (u,v) is in E, (u,w) is in E, and (w,v) is in E.
+	 * 
+	 * This method is illustrative for an algorithm relying on a graph representation
+	 * that allows efficient iteration over edges and neighbors and at the same time
+	 * efficient adjacency tests.
+	 * 
+	 * The case distinction concerning the degrees of u and v can yield large runtime
+	 * improvement on graphs with skewed degree distributions (few nodes with very high
+	 * degrees and most nodes with very low degrees).
+	 * 
+	 * @return number of transitive triples.
+	 */
+	public int getNumTTriples() {
+		int t = 0;
+		for(DirectedEdge<T> e : edges()) {
+			T u = e.getSource();
+			T v = e.getTarget();
+			if(outDegree(u) <= inDegree(v)) {
+				for(T w : outNeighbors(u)) {
+					if(adjacent(w, v)) ++t;
+				}
+			} else {
+				for(T w: inNeighbors(v)) {
+					if(adjacent(u, w)) ++t;
+				}
+			}
+		}
+		return t;
+	}
+	
 }
