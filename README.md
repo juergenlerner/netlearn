@@ -7,7 +7,7 @@ This code is intended for educational purposes to *illustrate* how methods could
 
 All material in this repository is distributed under the [GNU General Public License v3.0](https://github.com/juergenlerner/netlearn/blob/master/LICENSE).
 
-**Contact:** [Juergen Lerner](https://github.com/juergenlerner) [(juergen.lerner@gmail.com)](mailto:juergen.lerner@gmail.com)
+**Contact:** [J&uuml;rgen Lerner](https://github.com/juergenlerner) [(juergen.lerner@gmail.com)](mailto:juergen.lerner@gmail.com)
 
 ## Efficient data structures for sparse graphs
 
