@@ -11,6 +11,6 @@ All material in this repository is distributed under the [GNU General Public Lic
 
 ## Efficient data structures for sparse graphs
 
-Illustration how to implement in java efficient data structures for sparse graphs which are asymptotically optimal in both space (memory) consumption and runtime complexity.
+Illustration how to implement in java efficient data structures for sparse graphs which are asymptotically optimal in both space (memory) consumption and runtime complexity of typical graph operations.
 
 See [```src/kn/uni/nl/ds/graph/```](https://github.com/juergenlerner/netlearn/tree/main/src/kn/uni/nl/ds/graph) for code.
