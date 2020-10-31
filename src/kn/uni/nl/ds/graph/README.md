@@ -1,1 +1,1 @@
-Data structures for graphs.
+Code illustrating how to implement in java efficient data structures for sparse graphs which are asymptotically optimal in both space (memory) consumption and runtime complexity of typical graph operations
