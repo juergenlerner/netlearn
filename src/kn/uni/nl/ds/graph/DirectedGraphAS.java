@@ -76,11 +76,17 @@ public class DirectedGraphAS<T> extends DirectedGraph<T> {
 	public void removeNode(T v) {
 		if(!containsNode(v))
 			return;
+		// sets of (out-/in-)neighbors of v will be removed from the hash maps
+		// in the last two lines in this method; however, v also has to be
+		// removed from the sets of neighbors of its neighbors, which is 
+		// done in the two loops below, where also numEdges is decreased
 		for(T u : outNeighbors(v)) {
-			removeEdge(v, u);
+			inNeighbors.get(u).remove(v);
+			--numEdges;
 		}
 		for(T u : inNeighbors(v)) {
-			removeEdge(u, v);
+			outNeighbors.get(u).remove(v);
+			--numEdges;
 		}
 		outNeighbors.remove(v);
 		inNeighbors.remove(v);

@@ -72,7 +72,8 @@ public class UndirectedGraphAS<T> extends UndirectedGraph<T> {
 		if(!containsNode(v))
 			return;
 		for(T u : neighbors(v)) {
-			removeEdge(u, v);
+			neighbors.get(u).remove(v);
+			--numEdges;
 		}
 		neighbors.remove(v);
 	}
