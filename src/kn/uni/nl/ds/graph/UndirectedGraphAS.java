@@ -141,8 +141,8 @@ public class UndirectedGraphAS<T> extends UndirectedGraph<T> {
 	 * via an adjacency set representation and the code with the anonymous inner class 
 	 * would seem to be unduly complicated (compared with the code of all other methods).
 	 * 
-	 * Runtime of this method is in O(|E|+|V|). It would be possible to reduce the runtime
-	 * to O(|E|) by maintaining only non-empty sets of neighbors. However,
+	 * Runtime of this method is in O(|E|+|V|+1). It would be possible to reduce the runtime
+	 * to O(|E|+1) by maintaining only non-empty sets of neighbors. However,
 	 * this modification would be only relevant in very sparse graphs in which the number of
 	 * nodes grows asymptotically faster than the number of edges. The implementation of several
 	 * methods would have to be modified as well.
